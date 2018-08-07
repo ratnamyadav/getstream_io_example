@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>GetstreamIoExample</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <% if current_user.present? %>
+      <div>
+        <%= link_to 'My Profile', profile_path %> |
+        <%= link_to 'Feeds', root_path %> |
+        <%= link_to 'Users', users_path %> |
+        <%= link_to 'Deals', deals_path %> |
+        <%= link_to 'Logout', destroy_user_session_path, method: :delete %> |
+      </div>
+    <% end %>
+    <%= yield %>
+  </body>
+</html>

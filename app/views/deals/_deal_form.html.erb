@@ -1,0 +1,16 @@
+<% if (deal.user_like(current_user)) %>
+  <div class="media">
+    <div class="pull-left">
+      <%= button_to "UnLike", like_path(deal.user_like(current_user)), :method => "delete", :class => "btn btn-primary btn-sm btn-danger" %>
+    </div>
+  </div>
+<% else %>
+  <%= form_for :like, url: likes_path do |f| %>
+    <div class="media">
+      <div class="pull-left">
+        <input class="btn btn-primary btn-sm" type="submit" value="Like">
+      </div>
+    </div>
+    <%= f.hidden_field :deal_id, :value => deal.id %>
+  <% end %>
+<% end %>

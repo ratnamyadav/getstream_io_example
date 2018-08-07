@@ -1,0 +1,9 @@
+<h3>Deals</h3>
+<% @deals.each do |deal| %>
+  <div>
+    <h4><%= deal.name %></h4>
+    <p><%= deal.description %></p>
+  </div>
+  <%= render partial: "deals/deal_form", locals: {deal: deal} %>
+  <hr/>
+<% end %>

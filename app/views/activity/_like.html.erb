@@ -1,0 +1,7 @@
+<article class="pin">
+  <br/>
+  <footer class="pin-attribution">
+    <strong><%= activity['object'].name %></strong> liked by <%= activity['actor'].email %></a><% if(activity['time']) %> <%= time_ago_in_words activity['time'] %> ago <% end %>
+  </footer>
+  <hr/>
+</article>
