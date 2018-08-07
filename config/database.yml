@@ -22,6 +22,5 @@ test:
 production:
   <<: *default
   database: getstream_production
-  host: localhost
-  username: postgres
-  password: postgres
+  username: myapp
+  password: <%= ENV['MYAPP_DATABASE_PASSWORD'] %>
